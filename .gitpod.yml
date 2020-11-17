@@ -1,0 +1,23 @@
+tasks:
+  - init: |
+      yarn install
+      yarn meta git update
+    command: gp sync-done boot
+
+  # - name: Docs
+  #   before: gp sync-await boot && cd docs/
+  #   init: yarn install
+  #   command: yarn start
+
+  # - name: Examples
+  #   before: gp sync-await boot && cd examples/
+  #   init: yarn install
+  #   command: yarn start
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode@5.7.2:uyRGbFR3U94Ki5fjjZ7aoQ==
